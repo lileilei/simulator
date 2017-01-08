@@ -1,0 +1,38 @@
+doctype html
+
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    meta(name='renderer' content='webkit')
+    meta(name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(content="telephone=no" name="format-detection")
+    meta(name='keywords', content=KEYWORDS)
+    meta(name='description', content=DESCRIPTION, itemprop='description')
+    //- meta(itemprop='name', content='分享标题')
+    //- meta(itemprop='image', content='图片url')
+    block title
+      title= TITLE
+    block rem
+    block css
+    base(href=CONTEXT_PATH + '/')
+    //- Polyfills
+    <!--[if lt IE 10]>
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.5.7/es5-shim.min.js,es5-shim/4.5.7/es5-sham.min.js,es6-shim/0.35.1/es6-sham.min.js,es6-shim/0.35.1/es6-shim.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 11]>
+    <script src="https://as.alipayobjects.com/g/component/??es6-shim/0.35.1/es6-sham.min.js,es6-shim/0.35.1/es6-shim.min.js"></script>
+    <![endif]-->
+    -
+      const G_CFG = {
+        CONTEXT_PATH: CONTEXT_PATH,
+        REST_PATH: REST_PATH,
+        TEST_PATH: TEST_PATH,
+        UPLOAD_PATH: UPLOAD_PATH
+      };
+    script.
+      window.App = {globals: !{JSON.stringify(G_CFG)}};
+  body
+    block content
+    block js

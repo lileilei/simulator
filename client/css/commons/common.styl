@@ -1,0 +1,95 @@
+// 公用样式
+
+@require "nib" //常用函数
+@require "./constants" //常量
+
+global-reset()
+normalize-css()
+
+*
+  -webkit-tap-highlight-color transparent
+  outline: none
+  box-sizing border-box
+a
+  color: #333333
+  text-decoration:none
+  &:hover,
+  &.current, &.current:hover
+    color:#FF6C04
+    text-decoration:none
+
+.hidden
+  display none !important
+  visibility hidden
+
+.w
+  width $page-width
+  height 100%
+  margin 0 auto
+
+// 清楚浮动
+.clearfix
+  clearfix()
+
+//全局加载
+.gloading
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100%
+  z-index 30000
+  display block
+
+  .mask
+    display block
+    width 100%
+    height 100%
+    opacity 0.4
+    background #FFFFFF
+
+  .content
+    display block
+    width 160px
+    height 160px
+    position absolute
+    top 50%
+    left 50%
+    margin -80px 0 0 -80px
+    background #FFFFFF inline-url('images/loading.gif') no-repeat center center
+    border-radius 10px
+    box-shadow 0 0 10px rgba(0,0,0,0.3)
+
+// 加载时锁住浏览器
+html
+  &.loading
+    padding-right 11px
+    body
+      overflow hidden
+
+
+::-webkit-scrollbar
+  width 8px;
+  height 14px;
+
+::-webkit-scrollbar-button
+  display none;
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece 
+  background -webkit-gradient(linear, left top, right top, from(#f6f6f6), color-stop(50%, #fff), color-stop(75%, #fff), to(#fdfdfd));
+  width 11px;
+  height 11px;
+
+::-webkit-scrollbar-thumb 
+  border-radius 4px;
+  background #d8d8d8;
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+  border: 2px solid #fff;
+  height 30px
+
+::-webkit-scrollbar-thumb:hover 
+  background #bdbdbd;
+
+::-webkit-scrollbar-thumb:active 
+  background #8e8e8e;

@@ -1,0 +1,15 @@
+//- h1= message
+//- h2= code
+//- pre #{error.stack}
+
+extends ./partials/layout
+
+append css
+  link(rel='stylesheet', type='text/css', href='#{CONTEXT_PATH}/css/error.css?v=#{VERSION}')
+
+block js
+
+block content
+  h1= message
+    h2= code
+    pre #{error.stack}

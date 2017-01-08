@@ -1,0 +1,9 @@
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+   - pwd
+   - cnpm install
+   - npm run checkscripts

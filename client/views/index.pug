@@ -1,0 +1,18 @@
+extends ./partials/layout
+
+append css
+  style
+    include ../../node_modules/animate.css/animate.min.css
+  link(rel='stylesheet', type='text/css', href=`${CONTEXT_PATH}/css/app.css?v=${VERSION}`)
+
+block js
+  script(src=`${CONTEXT_PATH}/${NODE_ENV === 'development'? '__DYN_JS__/app.js' : 'js/app.js?v=' + VERSION}`)
+
+block content
+  #webapp
+    header
+    .main
+      | hello world
+    footer
+          
+      
