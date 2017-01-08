@@ -132,7 +132,7 @@ module.exports = ( app ) => {
   //这是比较水的方案，先这样吧
   app.use( browserSync( {
     init: true,
-    files: [ 'client/tpls/**/*', 'client/css/**/*.styl', 'client/views/**/*.pug', 'client/components/**/*' ],
+    files: [ 'client/css/**/*.styl', 'client/views/**/*.pug' ],
     logConnections: true
   } ) );
 
